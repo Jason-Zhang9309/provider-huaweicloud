@@ -32,6 +32,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           paths_ignore: '["**.md", "**.png", "**.jpg"]'
           do_not_skip: '["workflow_dispatch", "schedule", "push"]'
+      - name: ShowEnv
+        run: |
+          echo ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
+          echo ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
+
+
 
   report-breaking-changes:
     runs-on: ubuntu-24.04
